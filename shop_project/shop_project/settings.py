@@ -13,6 +13,8 @@ import os
 from pathlib import Path
 import environ
 
+from datetime import timedelta
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,10 +28,11 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(env('DEBUG'))
+
+DEBUG = env('DEBUG', cast=bool)
+# DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -41,8 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'users.apps.UsersConfig',
+    'djoser',
 
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,21 +79,50 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'shop_project.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('POSTGRES_DATABASE_NAME'),
-        'USER': env('POSTGRES_USER'),
+        'NAME':     env('POSTGRES_DATABASE_NAME'),
+        'USER':     env('POSTGRES_USER'),
         'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
+        'HOST':     env('POSTGRES_HOST'),
+        'PORT':     env('POSTGRES_PORT'),
     }
 }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication', #ToDo comma is mandatory or TypeError
+    )
+}
 
+AUTH_USER_MODEL = 'users.CustomUser'
+
+SIMPLE_JWT = {
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=20),
+}
+DJOSER = {
+    'SEND_ACTIVATION_EMAIL': True,
+    'ACTIVATION_URL': 'accounts/activate/{uid}/{token}',
+
+}
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
+)
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = int(env('EMAIL_PORT'))
+EMAIL_USE_TLS = env('EMAIL_USE_TLS', cast=bool)
+EMAIL_USE_SSL = env('EMAIL_USE_SSL', cast=bool)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
