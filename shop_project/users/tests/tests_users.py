@@ -6,6 +6,8 @@ from django.contrib.auth import get_user_model
 
 pytestmark = [pytest.mark.django_db]
 
+EVERYTHING_EQUALS_NON_NONE = type('omnieq', (), {'__eq__': lambda x, y: y is not None})()
+
 
 class UsersTestCase(APITestCase):
 
@@ -39,3 +41,4 @@ class UsersTestCase(APITestCase):
 
         response = self.client.get(url)
         assert response.status_code == 200
+        assert response.data == EVERYTHING_EQUALS_NON_NONE
