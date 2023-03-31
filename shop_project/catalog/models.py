@@ -1,5 +1,7 @@
 from django.db import models
 from users.models import CustomUser
+
+
 # Create your models here.
 
 
@@ -49,7 +51,7 @@ class Product(models.Model):
     producer = models.ForeignKey(Producer, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return f'{self.category} {self.producer} {self.name} {self.article}'
+        return f'{self.name}'
 
 
 class Promocode(models.Model):
@@ -60,7 +62,7 @@ class Promocode(models.Model):
     is_cumulative = models.BooleanField()
 
     def __str__(self):
-        return f'{self.name} {self.percent}%'
+        return f'{self.name}'
 
 
 class Basket(models.Model):
@@ -91,9 +93,9 @@ class Order(models.Model):
         ('In process', 'In process')
     )
     DELIVERY_NOTIF_IN_TIME = (
-        (24,24),
-        (6,6),
-        (1,1),
+        (24, 24),
+        (6, 6),
+        (1, 1),
     )
     date_created = models.DateTimeField()
     promocode = models.ForeignKey(Promocode, null=True, blank=True, on_delete=models.SET_NULL)
@@ -104,7 +106,7 @@ class Order(models.Model):
     delivery_status = models.CharField(max_length=15, choices=DELIVERY_STATUS, default='In process')
     payment_method = models.CharField(max_length=15, choices=PAYMENT_METHOSDS, default='Card')
     payment_status = models.CharField(max_length=15, choices=PAYMENT_STATUS, default='In process')
-    user = models.ForeignKey(CustomUser, null=True, blank=True,on_delete=models.SET_NULL)
+    user = models.ForeignKey(CustomUser, null=True, blank=True, on_delete=models.SET_NULL)
     result_price = models.DecimalField(max_digits=15, decimal_places=2)
 
 
@@ -112,5 +114,3 @@ class OrderProducts(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     count = models.IntegerField()
-
-
