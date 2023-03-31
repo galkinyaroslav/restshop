@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'djoser',
 
     'users.apps.UsersConfig',
+    'catalog.apps.CatalogConfig',
 ]
 
 MIDDLEWARE = [
