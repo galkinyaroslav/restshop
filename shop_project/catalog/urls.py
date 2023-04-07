@@ -1,6 +1,7 @@
 from django.urls import path, include
-from catalog.views import  ProducersListView, DiscountsListView, \
-    PromocodesListView, ProductsListView, ProducerProductsView, CategoriesListView,  CategoryProductsView
+from catalog.views import ProducersListView, DiscountsListView, \
+    PromocodesListView, ProductsListView, ProducerProductsView, CategoriesListView,  CategoryProductsView, \
+    DiscountProductsView
 
 urlpatterns = [
     # path('categories/', CategoryView.as_view(), name='categories'),
@@ -11,7 +12,9 @@ urlpatterns = [
     path('producers/', ProducersListView.as_view(), name='producers'),
     path('producers/<int:producer_id>/', ProducerProductsView.as_view(), name='producer-products'),
 
-    path('discounts/', DiscountsListView.as_view()),
+    path('discounts/', DiscountsListView.as_view(), name='discounts'),
+    path('discounts/<int:discount_id>/', DiscountProductsView.as_view(), name='discount-products'),
+
     path('promocodes/', PromocodesListView.as_view()),
     path('products/', ProductsListView.as_view()),
 
