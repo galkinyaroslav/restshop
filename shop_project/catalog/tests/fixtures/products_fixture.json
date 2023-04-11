@@ -1,0 +1,129 @@
+[
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "DoorCooling+",
+      "price": "3100.00",
+      "count_on_stock": 10,
+      "article": "GW-B509SAUM",
+      "description": "отдельностоящий, полный No Frost, электронное управление, класс A++, полезный объём: 384 л (277 + 107 л), инверторный компрессор, зона свежести, перенавешиваемые двери, складная полка, полка для вина, лоток для яиц, 59.5x68.2x203 см, серебристый",
+      "discount": null,
+      "category": 2,
+      "producer": 2
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Bespoke",
+      "price": "3600.00",
+      "count_on_stock": 20,
+      "article": "RB38A7B6235/WT",
+      "description": "отдельностоящий, полный No Frost, электронное управление, класс A++, полезный объём: 385 л (273 + 112 л), инверторный компрессор, зона свежести, перенавешиваемые двери, складная полка, полка для вина, лоток для яиц, отделка: стекло, 59.5x65.8x203 см, белый",
+      "discount": null,
+      "category": 2,
+      "producer": 1
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "ХМ",
+      "price": "1675.00",
+      "count_on_stock": 30,
+      "article": "4624-149-ND",
+      "description": "отдельностоящий, полный No Frost, электронное управление, класс A+, полезный объём: 329 л (235 + 94 л), зона свежести, перенавешиваемые двери, автодоводчик дверей, складная полка, полка для вина, лоток для яиц, 59.5x66x196.8 см, нержавеющая сталь",
+      "discount": 2,
+      "category": 2,
+      "producer": 4
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Xperia 10 III",
+      "price": "1270.00",
+      "count_on_stock": 40,
+      "article": "XQ-BT52 6GB/128GB",
+      "description": "Android, экран 6\" OLED (1080x2520) 60 Гц, Qualcomm Snapdragon 690, ОЗУ 6 ГБ, память 128 ГБ, поддержка карт памяти, камера 12 Мп, аккумулятор 4500 мАч, 2 SIM (nano-SIM), влагозащита IP68",
+      "discount": 1,
+      "category": 1,
+      "producer": 3
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Galaxy S23 Ultra",
+      "price": "3913.00",
+      "count_on_stock": 50,
+      "article": "SM-S918B/DS 12GB/256GB",
+      "description": "Android, экран 6.8\" AMOLED (1440x3088) 120 Гц, Qualcomm Snapdragon 8 Gen2 SM8550, ОЗУ 12 ГБ, память 256 ГБ, камера 200 Мп, аккумулятор 5000 мАч, 2 SIM (nano-SIM/eSIM), влагозащита IP68",
+      "discount": 1,
+      "category": 1,
+      "producer": 1
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "UHD Monitor",
+      "price": "1300.00",
+      "count_on_stock": 10,
+      "article": "27UP850N-W",
+      "description": "27\", 16:9, 3840x2160, IPS, 60 Гц, AMD FreeSync, динамики, интерфейсы HDMI+DisplayPort+USB Type-C, регулировка высоты, портретный режим",
+      "discount": null,
+      "category": 3,
+      "producer": 2
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "UltraWide",
+      "price": "1256.00",
+      "count_on_stock": 20,
+      "article": "34WP65C-B",
+      "description": "34\", 21:9, 3440x1440, VA, изогнутый (1800R), 160 Гц, AMD FreeSync Premium, динамики, интерфейсы HDMI+DisplayPort, регулировка высоты",
+      "discount": null,
+      "category": 3,
+      "producer": 2
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Odyssey G7",
+      "price": "2115.00",
+      "count_on_stock": 20,
+      "article": "C32G75TQSI",
+      "description": "31.5\", 16:9, 2560x1440, VA, изогнутый (1000R), 240 Гц, AMD FreeSync Premium Pro/совместимый с NVIDIA G-Sync, интерфейсы HDMI+DisplayPort, регулировка высоты, портретный режим",
+      "discount": null,
+      "category": 3,
+      "producer": 1
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Inzone M3 27",
+      "price": "3917.00",
+      "count_on_stock": 5,
+      "article": "‎SDMF27M30",
+      "description": "27\", 16:9, 1920x1080, IPS, 240 Гц, Adaptive-Sync/совместимый с NVIDIA G-Sync, динамики, интерфейсы HDMI+DisplayPort+USB Type-C, регулировка высоты",
+      "discount": null,
+      "category": 3,
+      "producer": 3
+    }
+  }
+]
+

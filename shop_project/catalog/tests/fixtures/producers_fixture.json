@@ -1,0 +1,38 @@
+[
+  {
+      "model": "catalog.producer",
+      "pk": 1,
+      "fields": {
+          "name": "Smasung",
+          "description": "Samsung Electronics Co., Ltd. is a South Korean multinational electronics corporation headquartered in Yeongtong-gu, Suwon, South Korea. It is the pinnacle of the Samsung chaebol, accounting for 70% of the group's revenue in 2012",
+          "country": "South Korea"
+      }
+  },
+  {
+      "model": "catalog.producer",
+      "pk": 2,
+      "fields": {
+          "name": "LG",
+          "description": "LG Corporation, known as LG and formerly Lucky-Goldstar from 1983 to 1995, is a South Korean multinational conglomerate founded by Koo In-hwoi and managed by successive generations of his family. It is the fourth-largest chaebol in South Korea.",
+          "country": "South Korea"
+      }
+  },
+  {
+      "model": "catalog.producer",
+      "pk": 3,
+      "fields": {
+          "name": "Sony",
+          "description": "Sony Group Corporation, commonly known as simply Sony, is a Japanese multinational conglomerate corporation headquartered in Minato, Tokyo, Japan.",
+          "country": "Japan"
+      }
+  },
+  {
+      "model": "catalog.producer",
+      "pk": 4,
+      "fields": {
+          "name": "Atlant",
+          "description": "ATLANT известен как производитель популярных холодильников, морозильников и стиральных машин. С конвейеров предприятия сходит практичная и надежная техника, отвечающая высоким потребительским запросам. Недаром бытовая техника из Минска известна не только в нашей стране и других постсоветских республиках, но и во многих европейских странах и даже в далекой Австралии.",
+          "country": "Belarus"
+      }
+  }
+]
