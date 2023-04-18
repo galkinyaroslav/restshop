@@ -100,7 +100,7 @@ class Order(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     promocode = models.ForeignKey(Promocode, null=True, blank=True, on_delete=models.SET_NULL)
     delivery_time = models.DateTimeField()
-    dilivery_notif_in_time = models.IntegerField(choices=DELIVERY_NOTIF_IN_TIME, null=True, default=None)
+    delivery_notif_in_time = models.IntegerField(choices=DELIVERY_NOTIF_IN_TIME, null=True, default=None)
     delivery_method = models.CharField(max_length=15, choices=DELIVERY_METHOD, default='Self-delivery')
     delivery_address = models.CharField(max_length=256)
     delivery_status = models.CharField(max_length=15, choices=DELIVERY_STATUS, default='In process')

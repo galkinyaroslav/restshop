@@ -41,11 +41,12 @@ class ClientEndpointsTestCase(APITestCase):
         ]
 
     def test_category_by_id(self):
-        url = reverse('category-products')
+        url = reverse('category-products', kwargs={'category_id': 1})
         response = self.client.get(url)
         assert response.status_code == 200
-        assert isinstance(response.date, list)
-        assert response.data[0]['product'] == {
+        assert isinstance(response.data, list)
+        assert response.data == [
+            {
                 "id": 1,
                 "name": EVERYTHING_EQUALS_NON_NONE,
                 "price": "90.00",
@@ -55,5 +56,12 @@ class ClientEndpointsTestCase(APITestCase):
                 "discount": EVERYTHING_EQUALS_NON_NONE,
                 "category": EVERYTHING_EQUALS_NON_NONE,
                 "producer": EVERYTHING_EQUALS_NON_NONE
-            }
+            },
+            {
+                "id": 1,
+                "name": EVERYTHING_EQUALS_NON_NONE,
+                "description": EVERYTHING_EQUALS_NON_NONE,
+                "country": EVERYTHING_EQUALS_NON_NONE,
+            },
 
+            ]
