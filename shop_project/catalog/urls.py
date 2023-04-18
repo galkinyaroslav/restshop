@@ -1,7 +1,7 @@
 from django.urls import path, include
 from catalog.views import ProducersListView, DiscountsListView, \
-    PromocodesListView, ProductsListView, ProducerProductsView, CategoriesListView,  CategoryProductsView, \
-    DiscountProductsView, BasketView
+    PromocodesListView, ProductsListView, ProducerProductsView, CategoriesListView, CategoryProductsView, \
+    DiscountProductsView, BasketView, OrderView
 
 urlpatterns = [
     # ----------- client views -----------
@@ -21,6 +21,7 @@ urlpatterns = [
 
     # ----------- customer views -----------
 
-    path('cart/', BasketView.as_view(), name='user-basket')
+    path('cart/', BasketView.as_view(), name='user-basket'),
+    path('orders/', OrderView.as_view(), name='create-order'),
 
 ]

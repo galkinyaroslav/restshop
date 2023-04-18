@@ -3,10 +3,10 @@ from rest_framework.test import APIClient, APITestCase
 from django.shortcuts import reverse
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import get_user_model
+from conftest import EVERYTHING_EQUALS_NON_NONE
 
 pytestmark = [pytest.mark.django_db]
 
-EVERYTHING_EQUALS_NON_NONE = type('omnieq', (), {'__eq__': lambda x, y: y is not None})()
 
 
 class UsersTestCase(APITestCase):
