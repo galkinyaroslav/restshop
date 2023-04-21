@@ -7,7 +7,7 @@ from rest_framework.response import Response
 # from rest_framework.mixins import ListModelMixin
 from django.db.models import F
 from django.shortcuts import get_object_or_404
-
+from catalog.tasks import some_task
 from catalog.serializers import CategorySerializer, ProducerSerializer, DiscountSerializer, \
     PromocodeSerializer, ProductSerializer, BasketSerializer, AddProductSerializer, DeleteProductSerializer
 
@@ -27,6 +27,8 @@ class CategoryProductsView(APIView):
     def get(self, request, category_id):
         queryset = Product.objects.filter(category__id=category_id)
         serializer = ProductSerializer(queryset, many=True)
+        some_task.delay()
+
         return Response(serializer.data)
 
 
@@ -93,7 +95,10 @@ class PromocodesListView(ListAPIView):
 class ProductsListView(ListAPIView):
     queryset = Product.objects.all()
     permission_classes = (AllowAny,)
+
     serializer_class = ProductSerializer
+
+
 
 
 class BasketView(APIView):
