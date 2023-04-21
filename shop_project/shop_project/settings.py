@@ -48,6 +48,13 @@ INSTALLED_APPS = [
 
     'users.apps.UsersConfig',
     'catalog.apps.CatalogConfig',
+    'django_celery_beat',
+]
+
+CELERY_BROKER_URL = f'redis://{env("CELERY_HOST")}:{env("CELERY_PORT")}'
+CELERY_RESULT_BACKEND = f'redis://{env("CELERY_HOST")}:{env("CELERY_PORT")}'
+CELERY_IMPORTS = [
+    'catalog.tasks'
 ]
 
 MIDDLEWARE = [
